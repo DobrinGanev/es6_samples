@@ -42,5 +42,5 @@ const list = (state = [], action) => {
 const store = createStore(list)
 store.subscribe(logger)
 store.dispatch({type:'ADD_ITEM',id:1,text:'test 1'})
-store.dispatch({type:'ADD_ITEM',id:1,text:'test 2'})
+store.dispatch({type:'ADD_ITEM',id:2,text:'test 2'})
 
