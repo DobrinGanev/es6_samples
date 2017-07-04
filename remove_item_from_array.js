@@ -37,3 +37,15 @@ const remove_from_list_spread = (params) => {
 let original_list_spread= ['zero', 'one', 'two', 'three'];
 console.log(remove_from_list_spread({begin:1,end:3, list: original_list_spread}))
 console.log(original_list_spread)
+
+
+//remove by index
+const remove_item = (params) => {
+   const {array, index} = params
+    return [
+        ...array.slice(0, index),
+        ...array.slice(index + 1)
+    ];
+}
+console.log(remove_item({array:original_list_spread,index:0}))
+console.log(original_list_spread)
