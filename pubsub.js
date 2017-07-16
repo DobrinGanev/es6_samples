@@ -1,14 +1,16 @@
+//from https://github.com/PaulKinlan/EventManager/blob/master/index.js
+
 const EventManager = () => {
   let events = {}
 
   const publish = (name, data) => {
-    return new Promise(function(resolve, reject) {
-      var handlers = events[name]
+    return new Promise((resolve, reject) => {
+      const handlers = events[name]
       if(!!handlers === false) return
       handlers.forEach(function(handler) {
         handler.call(this, data)
       })
-      resolve();
+      resolve()
     })
   }
 
@@ -18,7 +20,7 @@ const EventManager = () => {
       handlers = events[name] = []
     }
     handlers.push(handler)
-  };
+  }
 
   const unsubscribe = (name, handler) => {
     let handlers = events[name]
